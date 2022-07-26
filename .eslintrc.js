@@ -5,4 +5,7 @@ module.exports = {
     '@typescript-eslint/ban-ts-comment': 'off',
     '@typescript-eslint/naming-convention': 'off',
   },
+  globals: {
+    Oxygen: true,
+  },
 };

@@ -1,6 +1,12 @@
 import {useUrl} from '@shopify/hydrogen';
 
-import {Section, Heading, FooterMenu, CountrySelector} from '~/components';
+import {
+  Section,
+  Heading,
+  FooterMenu,
+  CountrySelector,
+  LogoutButton,
+} from '~/components';
 import type {EnhancedMenu} from '~/lib/utils';
 
 /**
@@ -41,6 +47,7 @@ export function Footer({menu}: {menu?: EnhancedMenu}) {
         &copy; {new Date().getFullYear()} / Shopify, Inc. Hydrogen is an MIT
         Licensed Open Source project. This website is carbon&nbsp;neutral.
       </div>
+      <LogoutButton />
     </Section>
   );
 }

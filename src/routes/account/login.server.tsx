@@ -13,14 +13,6 @@ import {
 import {AccountLoginForm, AccountConnectStravaForm} from '~/components';
 import {Layout} from '~/components/index.server';
 
-const getStravaEndpoint = ({clientId, uri}: {clientId: string; uri: string}) =>
-  `http://www.strava.com/oauth/authorize?client_id=${clientId}&response_type=code&redirect_uri=${uri}&approval_prompt=force&scope=read`;
-
-const STRAVA_ENDPOINT = getStravaEndpoint({
-  clientId: '73615',
-  uri: 'http://localhost:3000/account/redirect',
-});
-
 export default function Login({response}: HydrogenRouteProps) {
   response.cache(CacheNone());
 
@@ -60,11 +52,6 @@ export async function api(
   if (!session) {
     return new Response('Session storage not available.', {status: 400});
   }
-
-  return new Response(null, {
-    status: 301,
-    headers: {Location: STRAVA_ENDPOINT},
-  });
 
   const jsonBody = await request.json();
 

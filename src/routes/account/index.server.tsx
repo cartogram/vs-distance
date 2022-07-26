@@ -40,8 +40,9 @@ export default function Account({response}: HydrogenRouteProps) {
     language: {isoCode: languageCode},
     country: {isoCode: countryCode},
   } = useLocalization();
-  const {customerAccessToken} = useSession();
+  const {stravaAccessToken, customerAccessToken} = useSession();
 
+  if (stravaAccessToken) return response.redirect('/products/builder');
   if (!customerAccessToken) return response.redirect('/account/login');
 
   const {data} = useShopQuery<{

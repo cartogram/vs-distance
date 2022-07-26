@@ -20,6 +20,7 @@ export async function api(
   }
 
   await session.set('customerAccessToken', '');
+  await session.set('stravaAccessToken', '');
 
   return new Response();
 }

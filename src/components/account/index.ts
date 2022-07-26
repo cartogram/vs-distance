@@ -10,3 +10,4 @@ export {AccountConnectStravaForm} from './AccountConnectStravaForm.client';
 export {AccountOrderHistory} from './AccountOrderHistory.client';
 export {AccountPasswordResetForm} from './AccountPasswordResetForm.client';
 export {AccountRecoverForm} from './AccountRecoverForm.client';
+export {AccountAuthenticationPlaceholder} from './AccountAuthenticationPlaceholder.client';
